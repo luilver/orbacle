@@ -3,9 +3,11 @@
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
+require 'orbacle/version'
+
 Gem::Specification.new do |spec|
   spec.name          = 'orbacle'
-  spec.version       = '0.2.1'
+  spec.version       = ::Orbacle::VERSION
   spec.licenses      = ['MIT']
   spec.authors       = ['Rafał Łasocha']
   spec.email         = 'orbacle@swistak35.com'
