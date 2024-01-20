@@ -20,8 +20,9 @@ test-unit:
 test-performance:
 	bundle exec rspec --tag performance spec
 
-refresh-stats:
-	bundle exec ruby script/fetch_most_popular_rubygems_list.rb
+# Useless due to lack of Nokogiri compatibility issue
+# refresh-stats:
+#	bundle exec ruby script/fetch_most_popular_rubygems_list.rb
 
 bundle:
 	bundle install

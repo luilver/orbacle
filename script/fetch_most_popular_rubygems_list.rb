@@ -3,7 +3,8 @@
 require 'net/http'
 require 'uri'
 require 'openssl'
-require 'nokogiri'
+# Useless due to lack of Nokogiri compatibility issue
+# require 'nokogiri'
 require 'json'
 
 stats = []
@@ -17,7 +18,7 @@ stats = []
   request = Net::HTTP::Get.new(uri.request_uri)
   response = http.request(request)
   raw_body = response.body
-  body = Nokogiri::HTML(raw_body)
+  body = raw_body #= Nokogiri::HTML(raw_body)
   gem_nodes = body.css(".stats__graph__gem")
   gem_nodes.each do |gem_node|
     gem_name = gem_node.css(".stats__graph__gem__name a")[0].text
